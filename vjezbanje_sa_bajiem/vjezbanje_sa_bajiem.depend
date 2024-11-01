@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1729339656 source:c:\users\korisnik\desktop\tihi\github\programiranje-1\vjezbanje_sa_bajiem\main.cpp
+	<iostream>
+	<cmath>
+	<ctime>
+
