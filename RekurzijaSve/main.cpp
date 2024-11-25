@@ -1,5 +1,5 @@
 #include <iostream>
-
+///Zadaci iz rekurzije iz p2 i proslog sem
 void ispis1(int n){
     if(n==0)
     {
