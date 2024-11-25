@@ -1,5 +1,5 @@
 #include <iostream>
-///Prva grupa zadataka za vjezbu
+///Prva grupa zadataka za vjezbu: nizovi
 void fillArr(int *arr,int len){
     if(len == 0)
         return;
