@@ -156,6 +156,47 @@ void zad42(int *arr,int len){
     std::cout<<n1 << " + " << n2 << " = " <<n1+n2;
 }
 
+void zad43(int *arr,int len){
+    bubbleSortAsc(arr,len);
+    for(int i = 0; i < len-1;i++){
+        std::swap(arr[i],arr[i+1]);
+        i++;
+    }
+    printArrRec(arr,len);
+}
+
+void zad44(int *arr,int len){
+    while(true){
+    bool duplicate=false;
+    for(int i =0 ;i < len-1;i++){
+        if(arr[i]==arr[i+1]){
+            bool swapped = false;
+            duplicate=true;
+            for(int j=i+2;j<len;j++)
+                if(arr[i+1]!=arr[j]){
+                    std::swap(arr[i+1],arr[j]);
+                    swapped=true;
+                    break;
+                }
+            if(!swapped)
+            {
+                for(int j = 0;j < i+1;j++)
+                    if(arr[i+1]!=arr[j]){
+                        std::swap(arr[i+1],arr[j]);
+                        swapped=true;
+                        break;
+                    }
+            }
+        }
+        printArrRec(arr,len);
+    }
+    if(!duplicate)
+        break;
+    printArrRec(arr,len);
+    }
+}
+
+
 int main()
 {
     int len;
@@ -164,7 +205,7 @@ int main()
     fillArrRec(arr,len);
     printArrRec(arr,len);
 
-    zad41(arr,len);
+    zad44(arr,len);
 
     return 0;
 }
