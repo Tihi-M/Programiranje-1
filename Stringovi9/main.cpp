@@ -1,5 +1,9 @@
 #include <iostream>
 #include <string>
+void obrniStr(std::string& str){
+    for(int i = 0; i < str.length()/2;i++)
+        std::swap(str[i],str[str.length()-1-i]);
+}
 
 void intToExcel(int n){
     std::string coll = "";
