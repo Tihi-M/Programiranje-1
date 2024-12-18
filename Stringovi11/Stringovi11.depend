@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1734545839 source:c:\users\korisnik\desktop\tihi\github\programiranje-1\stringovi11\main.cpp
+	<iostream>
+	<string.h>
+
