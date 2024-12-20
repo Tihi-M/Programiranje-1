@@ -88,19 +88,22 @@ Node* midNode(Node* head){
 Node* mergeList(Node*& left, Node*& right){
     Node* res = new Node;
     Node* temp = res;
-    while(left != nullptr && right != nullptr){
+
+    while(left!=nullptr && right!=nullptr)
+    {
         if(left->val < right->val){
-            temp->next = left;
+            temp->next=left;
             left = left->next;
         }
         else{
             temp->next = right;
-            right=right->next;
+            right = right->next;
         }
-        temp=temp->next;
+        temp = temp->next;
     }
     if(left!=nullptr)
         temp->next = left;
+
     if(right!=nullptr)
         temp->next = right;
 
@@ -123,6 +126,43 @@ Node* mergeSort(Node*& head){
     return mergeList(left,right);
 }
 
+void obrisiCvor(Node*& head,int val){
+    Node* prev = nullptr;
+    Node* temp = head;
+
+    while(temp!=nullptr && temp->val != val)
+    {
+        prev=temp;
+        temp=temp->next;
+    }
+
+    if(temp == nullptr)
+        return;
+    if(prev == nullptr){
+        if(head->cnt > 1){
+            head->cnt--;
+            return;
+        }
+        else{
+            head=head->next;
+            delete temp;
+            return;
+        }
+    }
+    else{
+        if(temp->cnt > 1){
+            temp->cnt--;
+            return;
+        }
+        else{
+            prev->next = temp->next;
+            delete temp;
+            return;
+        }
+    }
+
+
+}
 
 int main()
 {
@@ -135,10 +175,12 @@ int main()
     addFirst(head,8);
     addEnd(head,5);
 
-    printList2(head);
+    printList1(head);
 
-   std::cout<<head->val<<std::endl;
     head = mergeSort(head);
-    printList2(head);
+    printList1(head);
+    obrisiCvor(head,8);
+    obrisiCvor(head,8);
+    printList1(head);
     return 0;
 }
